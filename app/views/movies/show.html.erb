@@ -8,6 +8,7 @@
             <%= year_of(@movie) %> &bull; <%= @movie.rating %>
         </h2>
         <div class="reviews">
+            <%= average_stars(@movie) %>
             <%= link_to pluralize(@movie.reviews.size, "review"), movie_reviews_path(@movie) %>
         </div>
         <p>
@@ -27,6 +28,7 @@
                 <td><%= total_gross(@movie) %></td>
             </tr>
         </table>
+        <%= link_to "Write Review", new_movie_review_path(@movie), class: "review" %>
     </div>
 </section>
 
